@@ -2,20 +2,52 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credencial Digital - UEPG</title>
     <style>
-        body { font-family: sans-serif; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .card { background: white; width: 850px; display: flex; padding: 25px; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 2px; border: 1px solid #ddd; }
-        .foto-container { width: 220px; height: 260px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); background: #eee; overflow: hidden; }
+        body { font-family: sans-serif; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 10px; }
+        
+        .card { 
+            background: white; 
+            width: 100%; 
+            max-width: 850px; 
+            display: flex; 
+            padding: 25px; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+            border-radius: 2px; 
+            border: 1px solid #ddd; 
+            box-sizing: border-box;
+        }
+        
+        .foto-container { width: 220px; height: 260px; box-shadow: inset 0 0 10px rgba(0,0,0,0.2); background: #eee; overflow: hidden; flex-shrink: 0; }
         .foto-container img { width: 100%; height: 100%; object-fit: cover; }
+        
         .conteudo { flex: 1; padding: 0 30px; }
         .nome-principal { font-size: 30px; font-weight: bold; color: #444; margin: 0; text-transform: uppercase; }
         .instituicao { font-size: 18px; color: #555; margin-top: 5px; font-weight: 500; }
         .status-badge { background-color: #28a745; color: white; text-align: center; padding: 10px; font-weight: bold; border-radius: 4px; margin: 20px 0; font-size: 14px; letter-spacing: 1px; }
         .detalhes { font-size: 15px; color: #333; line-height: 1.8; }
-        .sidebar { width: 160px; border-left: 1px solid #eee; padding-left: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        
+        .sidebar { width: 160px; border-left: 1px solid #eee; padding-left: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
         .logo-uepg { width: 110px; margin-bottom: 5px; }
         .label-validacao { font-size: 10px; color: #aaa; font-weight: bold; line-height: 1.2; }
+
+        /* Ajustes para Celular */
+        @media (max-width: 768px) {
+            .card { flex-direction: column; align-items: center; padding: 20px; text-align: center; }
+            .foto-container { margin-bottom: 20px; width: 200px; height: 240px; }
+            .conteudo { padding: 0; width: 100%; }
+            .nome-principal { font-size: 24px; }
+            .instituicao { font-size: 16px; }
+            .sidebar { 
+                width: 100%; 
+                border-left: none; 
+                border-top: 1px solid #eee; 
+                padding-left: 0; 
+                padding-top: 20px; 
+                margin-top: 20px; 
+            }
+        }
     </style>
 </head>
 <body>
